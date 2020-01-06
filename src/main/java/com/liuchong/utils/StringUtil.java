@@ -4,68 +4,32 @@ import java.io.UnsupportedEncodingException;
 import java.util.Random;
 
 public class StringUtil {
-	/**
-	 * @Title: isNull   
-	 * @Description: 判断字符串是否为空   
-	 * @param: @param str
-	 * @param: @return      
-	 * @return: boolean      
-	 * @throws
-	 */
+	
 	public static boolean isNull(String str) {
 		if(str==null) {
 			return true;
 		}
-		/** 去空格后，如果为"",返回true **/
 		str = str.trim();
 		if("".equals(str)) {
 			return true;
 		}
 		return false;
 	}
-	/**
-	 * @Title: isNotNull   
-	 * @Description: 判断字符串不为空   
-	 * @param: @param str
-	 * @param: @return      
-	 * @return: boolean      
-	 * @throws
-	 */
+	
 	public static boolean isNotNull(String str) {
 		return !isNull(str);
 	}
-	/**
-	 * @Title: isPhoneNum   
-	 * @Description: 是否为手机号   18618109887
-	 * @param: @param str
-	 * @param: @return      
-	 * @return: boolean      
-	 * @throws
-	 */
+
 	public static boolean isPhoneNum(String str) {
 		String regex = "1[3578]\\d{9}";
 		return str.matches(regex);
 	}
-	/**
-	 * @Title: isEmail   
-	 * @Description: 判断是否为邮箱 zhanggm1002@qq.com   
-	 * @param: @param str
-	 * @param: @return      
-	 * @return: boolean      
-	 * @throws
-	 */
+	
 	public static boolean isEmail(String str) {
 		String regex = "\\w+@\\w+.(com|cn|com.cn|net)";
 		return str.matches(regex);
 	}
-	/**
-	 * @Title: isLetter   
-	 * @Description: 判断是否全为字母   
-	 * @param: @param str
-	 * @param: @return      
-	 * @return: boolean      
-	 * @throws
-	 */
+	
 	public static boolean isLetter(String str) {
 		if(isNull(str)) {
 			return false;
@@ -74,26 +38,13 @@ public class StringUtil {
 		String regex = "[a-z]+";
 		return str.matches(regex);
 	}
-	/**
-	 * @Title: getRandomChar   
-	 * @Description: 获得随机一个字符   
-	 * @param: @return      
-	 * @return: char      
-	 * @throws
-	 */
+	
 	public static char getRandomChar() {
 		Random random = new Random();
 		char c = (char)('a'+random.nextInt(26));
 		return c;
 	}
-	/**
-	 * @Title: getRandomChar   
-	 * @Description: 获得指定位数的随机字符   
-	 * @param: @param num
-	 * @param: @return      
-	 * @return: String      
-	 * @throws
-	 */
+	
 	public static String getRandomChar(int num) {
 		StringBuffer sb = new StringBuffer();
 		for(int i=0;i<num;i++) {
@@ -103,27 +54,14 @@ public class StringUtil {
 		return sb.toString();
 	}
 	
-	/**
-	 * @Title: getRandomNumber   
-	 * @Description: 获得随机数字   
-	 * @param: @return      
-	 * @return: char      
-	 * @throws
-	 */
+	
 	public static char getRandomNumber() {
 		Random random = new Random();
 		char c = (char)('0'+random.nextInt(10));
 		return c;
 	}
 	
-	/**
-	 * @Title: getRandomCharAndNumber   
-	 * @Description: 获得随机字符串（数字+字符）   
-	 * @param: @param num
-	 * @param: @return      
-	 * @return: char      
-	 * @throws
-	 */
+	
 	public static String getRandomCharAndNumber(int num) {
 		StringBuffer sb = new StringBuffer();
 		Random random = new Random();
@@ -139,13 +77,7 @@ public class StringUtil {
 		}
 		return sb.toString();
 	}
-	/**
-	 * @Title: randomChineseString   
-	 * @Description: 随机中文   
-	 * @param: @return      
-	 * @return: String      
-	 * @throws
-	 */
+	
 	public static String randomChineseString() {
 		String str = null;
 		int highPos, lowPos;
@@ -163,14 +95,7 @@ public class StringUtil {
 		}
 		return str;
 	}
-	/**
-	 * @Title: randomChineseString   
-	 * @Description: 获得随机中文   
-	 * @param: @param num
-	 * @param: @return      
-	 * @return: String      
-	 * @throws
-	 */
+	
 	public static String randomChineseString(int num) {
 		StringBuffer sb = new StringBuffer();
 		for(int i=0;i<num;i++) {
@@ -179,13 +104,7 @@ public class StringUtil {
 		}
 		return sb.toString();
 	}
-	/**
-	 * @Title: randomChineseName   
-	 * @Description: 百家姓 获得随机姓  
-	 * @param: @return      
-	 * @return: String      
-	 * @throws
-	 */
+	
 	public static String randomChineseName() {
 		String[] surname = { "赵", "钱", "孙", "李", "周", "吴", "郑", "王", "冯", "陈", "褚", "卫", "蒋", "沈", "韩", "杨", "朱", "秦",
 				"尤", "许", "何", "吕", "施", "张", "孔", "曹", "严", "华", "金", "魏", "陶", "姜", "戚", "谢", "邹", "喻", "柏", "水", "窦",
@@ -217,9 +136,7 @@ public class StringUtil {
 				"颛孙", "端木", "巫马", "公西", "漆雕", "车正", "壤驷", "公良", "拓跋", "夹谷", "宰父", "谷梁", "段干", "百里", "东郭", "微生", "梁丘",
 				"左丘", "东门", "西门", "南宫", "第五", "公仪", "公乘", "太史", "仲长", "叔孙", "屈突", "尔朱", "东乡", "相里", "胡母", "司城", "张廖",
 				"雍门", "毋丘", "贺兰", "綦毋", "屋庐", "独孤", "南郭", "北宫", "王孙" };
-		// 随机获取姓氏
 		String name1 = surname[RandomUtil.random(0, surname.length - 1)];
-		// 随机获取1-2个中文
 		String name2 = randomChineseString(RandomUtil.random(1, 3));
 		return name1 + name2;
 	}

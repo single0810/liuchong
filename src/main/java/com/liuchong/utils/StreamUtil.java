@@ -8,13 +8,7 @@ import java.io.IOException;
 import java.io.InputStream;
 
 public class StreamUtil {
-	/**
-	 * @Title: close   
-	 * @Description: 批量关闭流   
-	 * @param: @param autoCloseables      
-	 * @return: void      
-	 * @throws
-	 */
+	
 	public static void close(AutoCloseable... autoCloseables ) {
 		for(AutoCloseable autoCloseable:autoCloseables) {
 			try {
@@ -27,14 +21,7 @@ public class StreamUtil {
 	
 
 	
-	/**
-	 * @Title: readTextFile   
-	 * @Description: 以流的方式，读取文本文件内容   
-	 * @param: @param file
-	 * @param: @return      
-	 * @return: String      
-	 * @throws
-	 */
+	
 	public static String readTextFile(File file) {
 		InputStream inputStream = null;
 		try {
@@ -52,26 +39,11 @@ public class StreamUtil {
 			close(inputStream);
 		}
 	}
-	/**
-	 * @Title: getFileContent   
-	 * @Description: 根据文件全名读取文件内容   
-	 * @param: @param fileFullName
-	 * @param: @return      
-	 * @return: String      
-	 * @throws
-	 */
+	
 	public static String readTextFile(String fileFullName) {
 		return readTextFile(new File(fileFullName));
 	}
-	/**
-	 * @Title: writeTextFile   
-	 * @Description: 把内容写到指定文件   
-	 * @param: @param content
-	 * @param: @param file
-	 * @param: @param append      
-	 * @return: void      
-	 * @throws
-	 */
+	
 	public static void writeTextFile(String content,File file,boolean append) {
 		BufferedWriter writer = null;
 		try {
